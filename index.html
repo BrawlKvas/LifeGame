@@ -11,18 +11,18 @@
     <div class="wrap">
         <canvas id="canvas"></canvas>
         <div class="option">
-            <div class="size-block">
-                <input type="range">
+            <div class="option_block inp-size">
+                <input type="range" min="5" max="30" step="5" value="5" id="inpSize">
             </div>
-            <div class="speed">
-                <input type="range">
+            <div class="option_block inp-speed">
+                <input type="range" min="5" max="80" step="5" value="60" id="inpSpeed">
             </div>
             <div class="ready-template">
                 <div class="template"></div>
             </div>
             <button class="btn btn-start" id="btnStart">Start</button>
         </div>
-        <div class="status">OFF</div>
+        <!-- <div class="status">OFF</div> -->
     </div>
     <script src="./main.js"></script>
 </body>

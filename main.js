@@ -1,5 +1,6 @@
 let canvas = document.getElementById('canvas');
 
+
 let w = canvas.width = window.innerWidth / 2 - window.innerWidth / 2 % 10;
 let h = canvas.height = w;
 
@@ -8,8 +9,8 @@ ctx.fillStyle = 'black';
 
 let sizeBlock = 5;
 
-let N = Math.floor(w / sizeBlock);
-let M = Math.floor(h / sizeBlock);
+let N = w / sizeBlock;
+let M = h / sizeBlock;
 let arr = [];
 
 for (let i = 0; i < N; i++) {
@@ -120,4 +121,24 @@ function setPixel(x, y) {
 
     drawPixel();
 }
+
+class InputRange {
+    constructor(id) {
+        this.elem = document.getElementById(id);
+
+        this.inscription = document.createElement('div');
+        this.inscription.classList = 'inscription';
+        this.changeRange();
+
+        this.elem.parentNode.appendChild(this.inscription);
+
+        this.elem.addEventListener('input', this.changeRange.bind(this));
+    }
+
+    changeRange() {
+        this.inscription.innerHTML = this.elem.value;
+    }
+}
+new InputRange('inpSize');
+new InputRange('inpSpeed');
 
