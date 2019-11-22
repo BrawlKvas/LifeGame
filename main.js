@@ -39,6 +39,9 @@ let h = canvas.height = w;
 let ctx = canvas.getContext('2d');
 ctx.fillStyle = 'black';
 
+let inpSize = new InputRange('inpSize', 'px');
+let inpSpeed = new InputRange('inpSpeed', 'fps');
+
 let N = w / inpSize.getValue;
 let M = N;
 let arr = [];
@@ -48,9 +51,6 @@ for (let i = 0; i < N; i++) {
         arr[i] = new Array(M).fill(0);
     }
 }
-
-let inpSize = new InputRange('inpSize', 'px');
-let inpSpeed = new InputRange('inpSpeed', 'fps');
 
 document.getElementById('btnStart').addEventListener('click', start);
 
